@@ -80,6 +80,7 @@ var filterTags = (function () {
                     var data = t.parentNode.innerText;
                     t.setAttribute('data-ft', data);
                     addEvent(t, 'change', function(event) {
+                        event.stopImmediatePropagation();
                         return formHandler(event);
                     })
                 }

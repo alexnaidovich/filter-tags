@@ -1,0 +1,24 @@
+{
+  "name": "filter-tags",
+  "version": "0.0.1",
+  "description": "Visualiser for filter search via tags.",
+  "main": "filter-tags.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexnaidovich/filter-tags.git"
+  },
+  "keywords": [
+    "filter",
+    "search",
+    "tags"
+  ],
+  "author": "Alex Naidovich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexnaidovich/filter-tags/issues"
+  },
+  "homepage": "https://github.com/alexnaidovich/filter-tags#readme"
+}

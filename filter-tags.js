@@ -34,7 +34,6 @@ var filterTags = (function () {
         }
 
         var opts = {
-            // collection: 0, // Nodelist
             tagZone: 0, // Node
             ignoreClass: 0, // Classes to be ignored while action
             useDefaultStyle: true,
@@ -56,11 +55,11 @@ var filterTags = (function () {
 
         var ignored;
         if (opts.ignoreClass !== 0) {
-          if (typeof opts.ignoreClass === 'string') {
-            ignored = [opts.ignoreClass]
-          } else if (typeof ignoreClass === 'object') {
-            ignored = opts.ignoreClass;
-          }
+            if (typeof opts.ignoreClass === 'string') {
+                ignored = [opts.ignoreClass]
+            } else if (typeof ignoreClass === 'object') {
+                ignored = opts.ignoreClass;
+            }
         }
 
         ignored.forEach(function(className) {
@@ -93,10 +92,10 @@ var filterTags = (function () {
                     addEvent(t, 'change', function(event) {
                         event.stopImmediatePropagation();
                         return formHandler(event);
-                    })
+                    });
                 }
             }
-        })
+        });
         // TODO
         // var buffer = [];
         var selected = {};
@@ -121,20 +120,22 @@ var filterTags = (function () {
                 var action = setTimeout(function() {
                     for (var i = 0; i < triggers.length; i++) {
                         var that = triggers[i];
-                        var data = that.hasAttribute('data-ft') ?
-                            that.getAttribute('data-ft') :
-                            that.placeholder ?
-                                that.placeholder + ': ' + that.value :
-                                that.value;
+                        var data = that.hasAttribute('data-ft') && that.placeholder ?
+                            that.getAttribute('data-ft') + ', ' + that.placeholder + ': ' + that.value :
+                            that.hasAttribute('data-ft') ?
+                                that.getAttribute('data-ft') :
+                                that.placeholder ?
+                                    that.placeholder + ': ' + that.value :
+                                    that.value;
                         if (that.checked || (that.value && that.value !== 'on')) {
                             that.classList.add('ft--added');
                             selected[data] = that;
                         } else if (!that.checked) {
                           if (hasClass(that, 'ft--added')) {
-                            that.classList.remove('ft--added');
+                              that.classList.remove('ft--added');
                           }
                           if (selected[data]) {
-                            delete selected[data];
+                              delete selected[data];
                           }
                         }
                     }
@@ -149,8 +150,13 @@ var filterTags = (function () {
             if (event.target.hasAttribute('data-ft-remove')) {
                 var that = event.target.parentElement;
                 var data = that.querySelector('[data-ft-val]').getAttribute('data-ft-val');
-                
+
                 if (selected.hasOwnProperty(data)) {
+                    if (selected[data].checked) {
+                        selected[data].checked = false;
+                    } else if (selected[data].value && !(selected[data].value === 'on')) {
+                        selected[data].value = '';
+                    }
                     selected[data] = undefined;
                     delete selected[data];
                 }

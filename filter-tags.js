@@ -73,11 +73,19 @@ var filterTags = (function () {
             });
         });
 
-        var tagZone = document.querySelector(opts.tagZone) || document.body.appendChild(document.createElement('div'));
+        var tagZone;
+        if (opts.tagZone) {
+            tagZone = document.querySelector(opts.tagZone);
+        } else {
+            var div = document.body.appendChild(document.createElement('div'));
+            div.setAttribute('style', 'width:200px;padding:10px;background-color:#fff;display:flex;position:fixed;top:50px;right:50px;z-index:1000000009;border-radius:5px;box-shadow:0 4px 10px #000');
+            div.setAttribute('class', 'ft--default-tagzone'); // more crossbrowser that div.classList.add =)
+            tagZone = document.querySelector('.ft--default-tagzone');
+        }
         var form = document.querySelector(form);
         var triggers = form.querySelectorAll('input');
 
-        var defaultStyle = '.ft--tag{font-size:.85em;padding:8px;line-height:16px;background-color:#f3f3f3;border-radius:5px;margin:3px 6px 3px 0;}.ft--tag [data-ft-remove]{width:14px;height:14px;display:inline-block;margin-left: 6px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAABrcYNsc4BsdIBsc4Bsc4Bsc4C+18e+AAAABnRSTlMAFtTWx7jgNXjIAAAASklEQVQI12MIEWAAAkZXBjdDEEM4hUE4WQAoYGYIxIoMDEIgnlCSAKMakMMAJIFsIAMoBBIACwEF4Ay4FEIxXDvcQLgVcEvhzgAAi/IMn7LEUL8AAAAASUVORK5CYII=);background-size:contain;margin-bottom:-1px;}';
+        var defaultStyle = '.ft--tag{cursor:pointer;font-size:.85em;padding:8px;line-height:16px;background-color:#f3f3f3;border-radius:5px;margin:3px 6px 3px 0;}.ft--tag [data-ft-remove]{width:14px;height:14px;display:inline-block;margin-left: 6px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAABrcYNsc4BsdIBsc4Bsc4Bsc4C+18e+AAAABnRSTlMAFtTWx7jgNXjIAAAASklEQVQI12MIEWAAAkZXBjdDEEM4hUE4WQAoYGYIxIoMDEIgnlCSAKMakMMAJIFsIAMoBBIACwEF4Ay4FEIxXDvcQLgVcEvhzgAAi/IMn7LEUL8AAAAASUVORK5CYII=);background-size:contain;margin-bottom:-1px;}';
 
         if (opts.useDefaultStyle) {
             var style = form.appendChild(document.createElement('style'));
@@ -131,19 +139,18 @@ var filterTags = (function () {
                             that.classList.add('ft--added');
                             selected[data] = that;
                         } else if (!that.checked) {
-                          if (hasClass(that, 'ft--added')) {
-                              that.classList.remove('ft--added');
-                          }
-                          if (selected[data]) {
-                              delete selected[data];
-                          }
+                            if (hasClass(that, 'ft--added')) {
+                                that.classList.remove('ft--added');
+                            }
+                            if (selected[data]) {
+                                delete selected[data];
+                            }
                         }
                     }
                     renderer()
                 }, 16);
             }
-                // TODO: implement form submit handler (filter items)
-            // }
+            // TODO: implement form submit handler (filter items)
         }
 
         function tagzoneHandler(event) {

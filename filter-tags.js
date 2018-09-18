@@ -1,3 +1,14 @@
+/**
+ * filterTags by Alex Naidovich
+ * v. 0.0.1 2018-09-18
+ * Visualiser for adding a tag to filter search
+ * TODO: 1. Reduce multiple loops;
+ *       2. Make input[type="text"] handling properly
+ *       3. Implement a search with results based on filters
+ *       (for now it is nothing more than a visualiser).
+ * 
+ */
+
 var filterTags = (function () {
 
     function filterTags(form, options) {

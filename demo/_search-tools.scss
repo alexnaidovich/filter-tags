@@ -1,0 +1,124 @@
+.for-filter {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  & > div {
+    padding: 15px 20px;
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-stroke;
+    }
+  }
+
+  h5 {
+    letter-spacing: 2px;
+    font-size: .9em;
+    margin-top: .5em;
+  }  
+
+  &--header {
+    a {
+      margin-top: .2em;
+      font-size: .8em;
+      line-height: 1em;
+      font-weight: normal;
+    }
+  }
+
+  .tagzone {
+    @include flex(flex-start, flex-start, row, wrap);
+    padding: 12px 20px;
+    &:empty {
+      display: none;
+    }
+    .tag {
+      font-size: .85em;
+      padding: 8px;
+      line-height: 16px;
+      background-color: $bg-color;
+      border-radius: 5px;
+      margin: 3px 6px 3px 0;
+      cursor: pointer;
+      [data-remove] {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin-left: 6px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAABrcYNsc4BsdIBsc4Bsc4Bsc4C+18e+AAAABnRSTlMAFtTWx7jgNXjIAAAASklEQVQI12MIEWAAAkZXBjdDEEM4hUE4WQAoYGYIxIoMDEIgnlCSAKMakMMAJIFsIAMoBBIACwEF4Ay4FEIxXDvcQLgVcEvhzgAAi/IMn7LEUL8AAAAASUVORK5CYII=);
+        background-size: contain;
+        margin-bottom: -1px;
+      }
+    }
+    
+  }  
+
+
+}
+
+[class^="filter-"] {
+  min-height: 47px;
+}
+
+.accordion {
+  * {
+    outline: none;
+  }
+  h6::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWBAMAAAA2mnEIAAAAHlBMVEUAAACCipiAiJqBipiCiZmBiZmBiZqCipmBiZmCipmV4nJGAAAACXRSTlMA9zqup7c9dnWe1BTVAAAAMElEQVQY02OgFAQhmOwTExAcSyEEm3miAoLjiSTBApdAsBFqEHoxzeRAtiuIgWIAAHWhBrTmykyIAAAAAElFTkSuQmCC);
+    float: right;
+    transform: rotateZ(90deg);
+    position: relative;
+    top: -5px;
+    transition: .2s ease-in-out;
+  }
+  & > div {
+    position: relative;
+    width: 100%;
+    &.open h6::after {
+      transform: rotateZ(270deg) translateY(3px);
+    }
+  }
+  .fold {
+    margin-top: 15px;
+  }
+}
+
+.filter-keyword, .filter-price, .filter-year {  
+  label {
+    width: 100%;
+    input {
+      @include text-input;
+    }
+  }
+}
+ 
+.filter-checkbox, .filter-radio {
+  label {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.filter-price, .filter-year {
+  .content {
+    width: 100%;
+    @include flex(space-between);
+  }
+}
+
+.want-ad {
+  @include flex(center, center, column);
+  span {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .button {
+    width: 100%;
+    border-radius: 25px;
+  }
+}
+
+.ft--tag:hover [data-ft-remove], .tag:hover [data-remove] {
+  filter: hue-rotate(-220deg) saturate(811%) brightness(0.8);
+}

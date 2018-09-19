@@ -1,0 +1,24 @@
+$c: center;
+$sa: space-around;
+$sb: space-between;
+$fs: flex-start;
+$fe: flex-end;
+$str: stretch;
+$r: row;
+$rr: row-reverse;
+$col: column;
+$colr: column-reverse;
+$w: wrap;
+$now: nowrap;
+
+@mixin flex($justify: flex-start, $align: stretch, $dir: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+}
+
+.centered {
+  margin: 0 auto;
+}

@@ -1,0 +1,68 @@
+.l_radio, .l_checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+  font-size: 16px;
+  user-select: none;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .custom-radio, .custom-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid $corp-red;
+  }
+
+  .custom-radio {    
+    border-radius: 50%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background-color: $corp-red;
+      display: none;
+    }
+  }
+
+  .custom-checkbox {
+    border-radius: 2px;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: $corp-red;
+      display: none;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 15px;
+      top: -3px;
+      left: 3px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      display: none;
+    }
+  }
+
+  input:checked ~ .custom-radio::after,
+  input:checked ~ .custom-checkbox::before,
+  input:checked ~ .custom-checkbox::after {
+    display: block;
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alex Naidovich - Filter Tags Demo Page</title>
+    <link rel="stylesheet" href="./demo/style.css">
+    <link rel="shortcut icon" href="./demo/favicon.ico" type="image/x-icon">
+
+    <script src="./filter-tags.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <img src="data:image/png;base64,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" alt="Alex Naidovich Logo">
+                <h2>filter-tags demo page</h2>
+            </div>
+            <div class="social">
+                <a href="https://github.com/alexnaidovich/filter-tags" target="_blank">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAclBMVEUAAAA0XE04XkQ1XEw1XUs1XEw1XEw2XEs1W001XEw1XEw1XUw0XEw1XUw0XEw1XEw0WU41XEw1XEw1XEw0XEw1XEw1XUw1W0w1XEw0XEs2Ykw1XEw0XEwzXU00X0k1XEw1XEw0XEw1W001XUw0XEw1XExbeR0PAAAAJXRSTlMAVQbSJfz2Qij5xKaYiIJHHuraoWhe469QMwv0ai8YvZB1NbNsEnE3swAAATdJREFUOMt1kumWgyAMhYNYQetel7p1m+H9X3EkgYNF5v4hJ98FkpzAQVFcdUXRVXEEIdVlo4yasj5hOV7UQZdRfnO2KE8LO37+UgG9XClXFdTV8k79o474lO5xKXvuCO/jcj/SCQ2tTgldaf5m28beua5P6Gyr+R3vxOApxvR9j542cnL3ngBSoYRvEJSXULqOUF7vJdxsCb42BDfI9JFAQIkmGQzYd8iAcxnI14QMDb1N85vPfEbAYcTzczZ8EIxQmGJ9mfYK6GmDzqOmDetBUjBM33wa6KLEiWXZXm5RH64XidkZeutnZpfd3ZpK8pao/Tnfn6BScjKsCF2iTvRyre2SmU+k5YlJiEQ1D29EyIXNVKni7BFZU0Q8rSxHh1bkDMSdBPcN3N8xxo8GzuAs9muj9YD/APAZOnctkff5AAAAAElFTkSuQmCC" alt="Project's Page on Github">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="main-col">
+            <form class="for-filter">
+                <div class="tagzone"></div>
+            
+                <div class="some-checkboxes">
+                    <label class="l_checkbox"><input type="checkbox" name="ch1" data-ft="Default Value">Checkbox 1
+                        <span class="custom-checkbox"></span>       
+                    </label>
+                    <label class="l_checkbox"><input type="checkbox" name="ch2">Checkbox 2
+                        <span class="custom-checkbox"></span>       
+                    </label>
+                    <label class="l_checkbox"><input type="checkbox" name="ch3">Checkbox 3
+                        <span class="custom-checkbox"></span>          
+                    </label>
+                </div>
+            
+                <div class="some-radios">
+                    <h3 class="ft--ignore">Nothing will happen on klick on this heading</h3>
+                    <label class="l_radio"><input type="radio" name="radio">Radio 1
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label class="l_radio"><input type="radio" name="radio">Radio 2
+                        <span class="custom-radio"></span>
+                    </label>
+                    <label class="l_radio"><input type="radio" name="radio">Radio 3
+                        <span class="custom-radio"></span>
+                    </label>
+                </div>
+            
+                <div class="maybe-keyword filter-keyword">
+                    <label><input type="text" placeholder="Keyword..."></label> 
+                </div>
+            
+            </form>
+        </div>
+
+        <aside>
+                <h1>filter-tags</h1>
+                <h3>v.0.0.1 Initial Release</h3>
+                <p>No-depeidincies VanillaJS library to visualise search via tags
+                The search and filtering itself isn’t implemented yet, but it fits well for creating visual layout of the page’s filter search tool.</p>
+                <p><img src="https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/screenshots/01.PNG" alt="how it looks"></p>
+                <h2>Install</h2>
+                <h3>My grandpa’s way:</h3>
+                <pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/filter-tags.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+                </code></pre>
+                <h3>Usual way</h3>
+                <p>Terminal:</p>
+                <pre class="hljs"><code>npm install filter-tags
+                </code></pre>
+                <p>Index.js</p>
+                <pre class="hljs language-javascript"><code><span class="hljs-keyword">const</span> filterTags = <span class="hljs-built_in">require</span>(<span class="hljs-string">'filter-tags'</span>);
+                </code></pre>
+                <h2>Init</h2>
+                <p>You sholud have a:</p>
+                <ul>
+                <li>form element (obligatory);</li>
+                <li>div for tags to be added into/removed from (optional, if isn’t passed, some strange div will be created somewhere at the page 😃 );</li>
+                <li>class name to ignore (events delegated on the whole form, if you pass some classes here, events won’t affect elems with those classes);</li>
+                <li>kinda wish to style tags by yourself (boolean/optional, if <code>false</code>, default styles to <code>[class^=&quot;ft&quot;]</code> won’t be applied. Defaults to <code>true</code>);</li>
+                <li>if you want, you may pass custom render callback.</li>
+                </ul>
+                <p>In general, your HTML should look like this:</p>
+                <pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"for-filter"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tagzone"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-checkboxes"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch1"</span> <span class="hljs-attr">data-ft</span>=<span class="hljs-string">"Default Value"</span>&gt;</span>Checkbox 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch2"</span>&gt;</span>Checkbox 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch3"</span>&gt;</span>Checkbox 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-radios"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Nothing will happen on klick on this heading<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"maybe-keyword"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Keyword..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> 
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                
+                <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+                </code></pre>
+                <p>And your JS is going to be:</p>
+                <pre class="hljs language-javascript"><code>filterTags(<span class="hljs-string">'.for-filter'</span>, {     <span class="hljs-comment">// Form selector - @string - OBLIGATORY</span>
+                    <span class="hljs-comment">// options</span>
+                    tagZone: <span class="hljs-string">'.tagzone'</span>,        <span class="hljs-comment">// Tags container - @string - optional/preferred</span>
+                    ignoreClass: <span class="hljs-string">'.ft--ignore'</span>, <span class="hljs-comment">// Ignorelist - @string or @array - optional </span>
+                    useDefaultStyle: <span class="hljs-literal">false</span>,     <span class="hljs-comment">// def style - @boolean - def to true - optional</span>
+                    render: <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> {
+                        <span class="hljs-comment">// your custom callback = @function - optional</span>
+                    }
+                })
+                </code></pre>
+                <h2>Public API</h2>
+                <p>TBD - None at the moment.</p>
+                <h2>TODO:</h2>
+                <ol>
+                <li>Public API 😃;</li>
+                <li>Demo page;</li>
+                <li>Reduce multiple loops;</li>
+                <li>Make input[type=“text”] handling properly</li>
+                <li>Implement a search with results based on filters (for now it is nothing more than a visualiser).</li>
+                </ol>
+                <h2>PRs are highly welcome!</h2>
+                <p>License: MIT.</p>
+        </aside>
+        
+    </main>
+
+    <script>
+        filterTags('.for-filter', {
+            tagZone: '.tagzone',
+            ignoreClass: '.ft--ignore'
+        });
+    </script>
+</body>
+</html>

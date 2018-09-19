@@ -1,6 +1,6 @@
 {
   "name": "filter-tags",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Visualiser for filter search via tags.",
   "main": "filter-tags.js",
   "scripts": {

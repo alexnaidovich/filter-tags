@@ -80,7 +80,7 @@ TBD - None at the moment.
 ## TODO: 
 
   1. Public API :);
-  2. Demo page;
+  2. Demo page -> ** DONE! **;
   3. Reduce multiple loops;
   4. Make input[type="text"] handling properly
   5. Implement a search with results based on filters (for now it is nothing more than a visualiser).

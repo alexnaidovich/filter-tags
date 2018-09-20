@@ -1,6 +1,6 @@
 # filter-tags
 
-### v.0.0.1 Initial Release
+### v.0.2.1 Initial Release
 
 No-depeidincies VanillaJS library to visualise search via tags.
 
@@ -83,10 +83,17 @@ TBD - None at the moment.
 ## TODO: 
 
   1. Public API :);
-  2. Demo page -> ** DONE! **;
-  3. Reduce multiple loops;
-  4. Make input[type="text"] handling properly
-  5. Implement a search with results based on filters (for now it is nothing more than a visualiser).
+  2. Reduce multiple loops;
+  3. Make input[type="text"] handling properly
+  4. Implement a search with results based on filters (for now it is nothing more than a visualiser).
+
+## Changelog
+
+  * 0.2.2 - Updated demo page and docs
+  * 0.2   - Implemented Demo Page
+  * 0.1   - Had a little mess with controls
+  * 0.0.1 - Initial Release
+
 
 ## PRs are highly welcome!
 

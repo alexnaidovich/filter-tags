@@ -119,15 +119,26 @@ main {
         padding: 20px;
         overflow: scroll;
         overflow-y: hidden;
-        border-radius: 4px;
-        &, code {
-            font-family: 'Inconsolata', monospace;
-            font-size: 1.03m;
-            @media screen and (max-width: 600px) {
-                font-size: .85em;   
-            }
-        }
+        border-radius: 4px;  
+        @media screen and (max-width: 600px) {
+            font-size: .85em;   
+        }      
     }
+    pre, code {
+        font-family: 'Inconsolata', monospace;
+        font-size: 1.03m;        
+    }
+}
+
+.ft--clear-tags {
+    width: 80%;
+    background-color: $color;
+    color: #fff;
+    line-height: 2;
+    border-radius: 5px;
+    margin: 15px 20px;
+    outline: none;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 1170px) {

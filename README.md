@@ -1,6 +1,10 @@
 # filter-tags
 
-### v.0.2.1 Initial Release
+## IMPORTANT UPDATES - please type 'npm i filter-tags' to update!
+
+See changelog below.
+
+### v.0.3 Introducing API!!!
 
 No-depeidincies VanillaJS library to visualise search via tags.
 
@@ -26,6 +30,9 @@ npm install filter-tags
 Index.js
 ```javascript
 const filterTags = require('filter-tags');
+
+//or
+import filterTags from 'filter-tags';
 ```
 
 ## Init
@@ -33,8 +40,8 @@ const filterTags = require('filter-tags');
 You sholud have a:
   * form element (obligatory);
   * div for tags to be added into/removed from (optional, if isn't passed, some strange div will be created somewhere at the page :-) );
-  * class name to ignore (events delegated on the whole form, if you pass some classes here, events won't affect elems with those classes);
-  * kinda wish to style tags by yourself (boolean/optional, if ```false```, default styles to ```[class^="ft"]``` won't be applied. Defaults to ```true```);
+  * class name to ignore (events are delegated on the whole form, if you pass some classes here, events won't affect elems with those classes);
+  * kinda wish to style tags by yourself - option ```useDefaultStyle``` (boolean/optional, if ```false```, default styles to ```[class^="ft"]``` won't be applied. Defaults to ```true```);
   * if you want, you may pass custom render callback.
 
 In general, your HTML should look like this:
@@ -50,7 +57,7 @@ In general, your HTML should look like this:
     </div>
 
     <div class="some-radios">
-        <h3 class="ft--ignore">Nothing will happen on klick on this heading</h3>
+        <h3 class="ft--ignore">Nothing will happen on click on this heading</h3>
         <label><input type="radio" name="radio">Radio 1</label>
         <label><input type="radio" name="radio">Radio 2</label>
         <label><input type="radio" name="radio">Radio 3</label>
@@ -63,9 +70,9 @@ In general, your HTML should look like this:
 </form>
 ```
 
-And your JS is going to be:
+And your JS is going to be: (__important update:__ now you'd better __store new instance of filterTags into a variable__, for you to be able to use API)
 ```javascript
-filterTags('.for-filter', {     // Form selector - @string - OBLIGATORY
+const ft = new filterTags('.for-filter', { // Form selector - @string - OBLIGATORY
     // options
     tagZone: '.tagzone',        // Tags container - @string - optional/preferred
     ignoreClass: '.ft--ignore', // Ignorelist - @string or @array - optional 
@@ -83,21 +90,23 @@ If you don't pass ```useDefaultStyle: false``` in options, default prepared styl
 
 ## data-ft attribute and default values
 
-TBD
+By default the data for a tag is taken from the content of ```<label>``` tag (it mostly goes to checkboxes and radios). You can implicitly set your own text to display in tag, by setting ```data-ft``` attribute on the input.
 
 ## Public API
 
-TBD - None at the moment.
+  * ```ft.clearAll()``` - clear all inputs and remove all tags.
+  * TBD
 
 ## TODO: 
 
-  1. Public API :);
+  1. Public API (_started_) :);
   2. Reduce multiple loops;
-  3. Make input[type="text"] handling properly
+  3. Make input[type="text"] handling properly;
   4. Implement a search with results based on filters (for now it is nothing more than a visualiser).
 
 ## Changelog
 
+  * 0.3   - Public ```clearAll``` mtehod, store new instance of filterTags into a variable..
   * 0.2.2 - Updated demo page and docs
   * 0.2   - Implemented Demo Page
   * 0.1   - Had a little mess with controls

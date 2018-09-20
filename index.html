@@ -63,48 +63,53 @@
                         <input type="text" placeholder="Keyword"></label> 
                 </div>
             
+                <button id="ft--clr" class="ft--clear-tags">Clear all tags</button>
             </form>
         </div>
 
         <aside>
-                <h1>filter-tags</h1>
-                <h3>v.0.2.1 Initial Release</h3>
-                <p>No-depeidincies VanillaJS library to visualise search via tags. <br>
-                The search and filtering itself isn’t implemented yet, but it fits well for creating visual layout of the page’s filter search tool.</p>
-                <p><img src="https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/screenshots/01.PNG" alt="how it looks"></p>
-                <h2>Install</h2>
-                <h3>My grandpa’s way:</h3>
-                <pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/filter-tags.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-                </code></pre>
-                <h3>Usual way</h3>
-                <p>Terminal:</p>
-                <pre class="hljs"><code>npm install filter-tags
-                </code></pre>
-                <p>Index.js</p>
-                <pre class="hljs language-javascript"><code><span class="hljs-keyword">const</span> filterTags = <span class="hljs-built_in">require</span>(<span class="hljs-string">'filter-tags'</span>);
-                </code></pre>
-                <h2>Init</h2>
-                <p>You sholud have a:</p>
-                <ul>
-                <li>form element (obligatory);</li>
-                <li>div for tags to be added into/removed from (optional, if isn’t passed, some strange div will be created somewhere at the page 😃 );</li>
-                <li>class name to ignore (events delegated on the whole form, if you pass some classes here, events won’t affect elems with those classes);</li>
-                <li>kinda wish to style tags by yourself (boolean/optional, if <code>false</code>, default styles to <code>[class^=&quot;ft&quot;]</code> won’t be applied. Defaults to <code>true</code>);</li>
-                <li>if you want, you may pass custom render callback.</li>
-                </ul>
-                <p>In general, your HTML should look like this:</p>
-                <pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"for-filter"</span>&gt;</span>
+            <h1>filter-tags</h1>
+            <h2>IMPORTANT UPDATES - please type ‘npm i filter-tags’ to update!</h2>
+            <p>See changelog below.</p>
+            <h3>v.0.3 Introducing API!!!</h3>
+            <p>No-depeidincies VanillaJS library to visualise search via tags.</p>
+            <p>The search and filtering itself isn’t implemented yet, but it fits well for creating visual layout of the page’s filter search tool.</p>
+            <p><img src="https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/screenshots/01.PNG" alt="how it looks"></p>
+            <h2>Install</h2>
+            <h3>My grandpa’s way:</h3>
+            <pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/filter-tags.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+            </code></pre>
+            <h3>Usual way</h3>
+            <p>Terminal:</p>
+<pre class="hljs"><code>npm install filter-tags
+</code></pre>
+<p>Index.js</p>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">const</span> filterTags = <span class="hljs-built_in">require</span>(<span class="hljs-string">'filter-tags'</span>);
+
+<span class="hljs-comment">//or</span>
+<span class="hljs-keyword">import</span> filterTags <span class="hljs-keyword">from</span> <span class="hljs-string">'filter-tags'</span>;
+</code></pre>
+<h2>Init</h2>
+<p>You sholud have a:</p>
+<ul>
+<li>form element (obligatory);</li>
+<li>div for tags to be added into/removed from (optional, if isn’t passed, some strange div will be created somewhere at the page 😃 );</li>
+<li>class name to ignore (events are delegated on the whole form, if you pass some classes here, events won’t affect elems with those classes);</li>
+<li>kinda wish to style tags by yourself - option <code>useDefaultStyle</code> (boolean/optional, if <code>false</code>, default styles to <code>[class^=&quot;ft&quot;]</code> won’t be applied. Defaults to <code>true</code>);</li>
+<li>if you want, you may pass custom render callback.</li>
+</ul>
+<p>In general, your HTML should look like this:</p>
+<pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"for-filter"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tagzone"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-checkboxes"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Try clicking different inputs below<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch1"</span> <span class="hljs-attr">data-ft</span>=<span class="hljs-string">"Default Value"</span>&gt;</span>Checkbox 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch2"</span>&gt;</span>Checkbox 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch3"</span>&gt;</span>Checkbox 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-radios"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Nothing will happen on klick on this heading<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Nothing will happen on click on this heading<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
@@ -115,9 +120,9 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-                </code></pre>
-                <p>And your JS is going to be:</p>
-<pre class="hljs language-javascript"><code>filterTags(<span class="hljs-string">'.for-filter'</span>, {     <span class="hljs-comment">// Form selector - @string - OBLIGATORY</span>
+</code></pre>
+<p>And your JS is going to be: (<strong>important update:</strong> now you’d better <strong>store new instance of filterTags into a variable</strong>, for you to be able to use API)</p>
+<pre class="hljs language-javascript"><code><span class="hljs-keyword">const</span> ft = <span class="hljs-keyword">new</span> filterTags(<span class="hljs-string">'.for-filter'</span>, { <span class="hljs-comment">// Form selector - @string - OBLIGATORY</span>
     <span class="hljs-comment">// options</span>
     tagZone: <span class="hljs-string">'.tagzone'</span>,        <span class="hljs-comment">// Tags container - @string - optional/preferred</span>
     ignoreClass: <span class="hljs-string">'.ft--ignore'</span>, <span class="hljs-comment">// Ignorelist - @string or @array - optional </span>
@@ -127,17 +132,33 @@
     }
 })
 </code></pre>
-                <h2>Public API</h2>
-                <p>TBD - None at the moment. Under Construction</p>
-                <h2>TODO:</h2>
-                <ol>
-                <li>Public API 😃;</li>
-                <li>Reduce multiple loops;</li>
-                <li>Make input[type=“text”] handling properly</li>
-                <li>Implement a search with results based on filters (for now it is nothing more than a visualiser).</li>
-                </ol>
-                <h2>PRs are highly welcome!</h2>
-                <p>License: MIT.</p>
+<h2>Custom Styling</h2>
+<p>Tag is created with <code>.ft--tag</code> class, and the cross sign (removal trigger) is available by calling <code>.ft--tag [data-ft-remove]</code> selector.
+If you don’t pass <code>useDefaultStyle: false</code> in options, default prepared styles are applied, and you have to override them with <code>!important</code>.</p>
+<h2>data-ft attribute and default values</h2>
+<p>By default the data for a tag is taken from the content of <code>&lt;label&gt;</code> tag (it mostly goes to checkboxes and radios). You can implicitly set your own text to display in tag, by setting <code>data-ft</code> attribute on the input.</p>
+<h2>Public API</h2>
+<ul>
+<li><code>ft.clearAll()</code> - clear all inputs and remove all tags.</li>
+<li>TBD</li>
+</ul>
+<h2>TODO:</h2>
+<ol>
+<li>Public API (<em>started</em>) 😃;</li>
+<li>Reduce multiple loops;</li>
+<li>Make input[type=“text”] handling properly;</li>
+<li>Implement a search with results based on filters (for now it is nothing more than a visualiser).</li>
+</ol>
+<h2>Changelog</h2>
+<ul>
+<li>0.3   - Public <code>clearAll</code> mtehod, store new instance of filterTags into a variable…</li>
+<li>0.2.2 - Updated demo page and docs</li>
+<li>0.2   - Implemented Demo Page</li>
+<li>0.1   - Had a little mess with controls</li>
+<li>0.0.1 - Initial Release</li>
+</ul>
+<h2>PRs are highly welcome!</h2>
+<p>License: MIT.</p>
         </aside>
         
     </main>
@@ -145,9 +166,17 @@
     <a href="https://github.com/alexnaidovich"><img style="position: fixed; top: -10px; left: -10px; border: 0;" class="FOMG" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 
     <script>
-        filterTags('.for-filter', {
+        var ft = new filterTags('.for-filter', {
             tagZone: '.tagzone',
             ignoreClass: '.ft--ignore'
+        });
+
+        window.ft = ft;
+
+        var cl = document.getElementById('ft--clr');
+        cl.addEventListener('click', function(e) {
+            e.preventDefault();
+            ft.clearAll()
         });
     </script>
 </body>

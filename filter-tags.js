@@ -161,7 +161,7 @@ var filterTags = (function () {
                 if (selected.hasOwnProperty(data)) {
                     if (selected[data].checked) {
                         selected[data].checked = false;
-                    } else if (selected[data].value && !(selected[data].value === 'on')) {
+                    } else if (selected[data].value && !(selected[data].type === 'checkbox' && selected[data].type === 'radio')) {
                         selected[data].value = '';
                     }
                     selected[data] = undefined;
@@ -183,6 +183,27 @@ var filterTags = (function () {
             }            
         });
         addEvent(tagZone, 'click', tagzoneHandler);
+
+
+
+        /**
+         * Public API
+         * Clear All Tags, unset all inputs.
+         */
+        this.clearAll = function() {
+            for (var s in selected) {
+                if (selected[s].checked) {
+                    selected[s].checked = false;
+                } else if (selected[s].value && !(selected[s].type === 'checkbox' && selected[s].type === 'radio')) {
+                    selected[s].value = '';
+                }
+                selected[s] = undefined;
+                delete selected[s];
+            }
+
+            renderer();
+        }
+
 
     }
 

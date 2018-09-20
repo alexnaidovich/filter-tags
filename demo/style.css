@@ -434,9 +434,9 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -479,6 +479,15 @@ main > * {
 
 main .main-col {
   width: 270px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  main .main-col {
+    position: static;
+  }
 }
 
 main aside {

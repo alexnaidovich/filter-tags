@@ -73,7 +73,7 @@ main {
     width: 100%;
     max-width: $w-width;
     margin: 0 auto;
-    @include flex(space-between);
+    @include flex(space-between, flex-start);
     padding: 40px 0;
 
     @media screen and (max-width: 1170px) {
@@ -99,6 +99,11 @@ main {
 
     .main-col {
         width: 270px;
+        position: sticky;
+        top: 20px;
+        @media screen and (max-width: 600px) {  
+            position: static;
+        }
     }
 
     aside {

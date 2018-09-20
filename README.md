@@ -76,6 +76,15 @@ filterTags('.for-filter', {     // Form selector - @string - OBLIGATORY
 })
 ```
 
+## Custom Styling
+
+Tag is created with ```.ft--tag``` class, and the cross sign (removal trigger) is available by calling ```.ft--tag [data-ft-remove]``` selector.
+If you don't pass ```useDefaultStyle: false``` in options, default prepared styles are applied, and you have to override them with ```!important```.
+
+## data-ft attribute and default values
+
+TBD
+
 ## Public API
 
 TBD - None at the moment.

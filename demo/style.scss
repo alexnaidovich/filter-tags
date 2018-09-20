@@ -1,5 +1,6 @@
 @import 'flex';
 @import 'mixins';
+@import 'zenburn';
 
 $w-width: 1170px;
 $color: #355c4c;
@@ -22,6 +23,7 @@ html, body {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 @import 'search-tools';
 @import 'radio';
 
@@ -102,11 +104,27 @@ main {
     aside {
         width: calc(100% - 300px);
         padding: 15px 20px;
+        img {
+            max-width: 100%;
+        }
     }
 
     pre {
         background-color: lighten($color, 60);
         padding: 20px;
         overflow: scroll;
+        overflow-y: hidden;
+        border-radius: 4px;
+        &, code {
+            font-family: 'Inconsolata', monospace;
+            font-size: 1.03m;
+            @media screen and (max-width: 600px) {
+                font-size: .85em;   
+            }
+        }
     }
+}
+
+@media screen and (max-width: 1170px) {
+    .FOMG { display: none; }
 }

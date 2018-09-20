@@ -32,6 +32,7 @@
                 <div class="tagzone"></div>
             
                 <div class="some-checkboxes">
+                    <h3 class="ft--ignore">Try clicking different inputs below</h3>
                     <label class="l_checkbox"><input type="checkbox" name="ch1" data-ft="Default Value">Checkbox 1
                         <span class="custom-checkbox"></span>       
                     </label>
@@ -44,7 +45,7 @@
                 </div>
             
                 <div class="some-radios">
-                    <h3 class="ft--ignore">Nothing will happen on klick on this heading</h3>
+                    <h3 class="ft--ignore">Nothing will happen on click on this heading</h3>
                     <label class="l_radio"><input type="radio" name="radio">Radio 1
                         <span class="custom-radio"></span>
                     </label>
@@ -57,7 +58,9 @@
                 </div>
             
                 <div class="maybe-keyword filter-keyword">
-                    <label><input type="text" placeholder="Keyword..."></label> 
+                    <label>
+                        Keyword
+                        <input type="text" placeholder="Keyword"></label> 
                 </div>
             
             </form>
@@ -65,8 +68,8 @@
 
         <aside>
                 <h1>filter-tags</h1>
-                <h3>v.0.0.1 Initial Release</h3>
-                <p>No-depeidincies VanillaJS library to visualise search via tags
+                <h3>v.0.2.1 Initial Release</h3>
+                <p>No-depeidincies VanillaJS library to visualise search via tags. <br>
                 The search and filtering itself isn’t implemented yet, but it fits well for creating visual layout of the page’s filter search tool.</p>
                 <p><img src="https://raw.githubusercontent.com/alexnaidovich/filter-tags/master/screenshots/01.PNG" alt="how it looks"></p>
                 <h2>Install</h2>
@@ -91,44 +94,44 @@
                 </ul>
                 <p>In general, your HTML should look like this:</p>
                 <pre class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"for-filter"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tagzone"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                
-                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-checkboxes"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch1"</span> <span class="hljs-attr">data-ft</span>=<span class="hljs-string">"Default Value"</span>&gt;</span>Checkbox 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch2"</span>&gt;</span>Checkbox 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch3"</span>&gt;</span>Checkbox 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                
-                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-radios"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Nothing will happen on klick on this heading<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                
-                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"maybe-keyword"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Keyword..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> 
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-                
-                <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tagzone"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-checkboxes"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Try clicking different inputs below<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch1"</span> <span class="hljs-attr">data-ft</span>=<span class="hljs-string">"Default Value"</span>&gt;</span>Checkbox 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch2"</span>&gt;</span>Checkbox 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"ch3"</span>&gt;</span>Checkbox 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"some-radios"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ft--ignore"</span>&gt;</span>Nothing will happen on klick on this heading<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 1<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 2<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"radio"</span>&gt;</span>Radio 3<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"maybe-keyword"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Keyword..."</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> 
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
                 </code></pre>
                 <p>And your JS is going to be:</p>
-                <pre class="hljs language-javascript"><code>filterTags(<span class="hljs-string">'.for-filter'</span>, {     <span class="hljs-comment">// Form selector - @string - OBLIGATORY</span>
-                    <span class="hljs-comment">// options</span>
-                    tagZone: <span class="hljs-string">'.tagzone'</span>,        <span class="hljs-comment">// Tags container - @string - optional/preferred</span>
-                    ignoreClass: <span class="hljs-string">'.ft--ignore'</span>, <span class="hljs-comment">// Ignorelist - @string or @array - optional </span>
-                    useDefaultStyle: <span class="hljs-literal">false</span>,     <span class="hljs-comment">// def style - @boolean - def to true - optional</span>
-                    render: <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> {
-                        <span class="hljs-comment">// your custom callback = @function - optional</span>
-                    }
-                })
-                </code></pre>
+<pre class="hljs language-javascript"><code>filterTags(<span class="hljs-string">'.for-filter'</span>, {     <span class="hljs-comment">// Form selector - @string - OBLIGATORY</span>
+    <span class="hljs-comment">// options</span>
+    tagZone: <span class="hljs-string">'.tagzone'</span>,        <span class="hljs-comment">// Tags container - @string - optional/preferred</span>
+    ignoreClass: <span class="hljs-string">'.ft--ignore'</span>, <span class="hljs-comment">// Ignorelist - @string or @array - optional </span>
+    useDefaultStyle: <span class="hljs-literal">false</span>,     <span class="hljs-comment">// def style - @boolean - def to true - optional</span>
+    render: <span class="hljs-function"><span class="hljs-params">tag</span> =&gt;</span> {
+        <span class="hljs-comment">// your custom callback = @function - optional</span>
+    }
+})
+</code></pre>
                 <h2>Public API</h2>
-                <p>TBD - None at the moment.</p>
+                <p>TBD - None at the moment. Under Construction</p>
                 <h2>TODO:</h2>
                 <ol>
                 <li>Public API 😃;</li>
-                <li>Demo page;</li>
                 <li>Reduce multiple loops;</li>
                 <li>Make input[type=“text”] handling properly</li>
                 <li>Implement a search with results based on filters (for now it is nothing more than a visualiser).</li>
@@ -138,6 +141,8 @@
         </aside>
         
     </main>
+
+    <a href="https://github.com/alexnaidovich"><img style="position: fixed; top: 0; right: 0; border: 0;" class="FOMG" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 
     <script>
         filterTags('.for-filter', {
